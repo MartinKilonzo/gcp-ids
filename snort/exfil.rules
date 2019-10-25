@@ -1,0 +1,9 @@
+alert tcp 10.132.0.0/20 any -> $EXTERNAL_NET $HTTP_PORTS ( msg: "oh no data exfiltration"; flow: to_server,established; sid:10000000; )
+alert tcp 10.132.0.0/20 any -> $EXTERNAL_NET any ( content:"googleapis.com"; msg: "oh no data exfiltration into gcp bucket"; rev:1; flow: to_server,established; sid:10000005; )
+alert tcp $EXTERNAL_NET any -> 10.132.0.0/20 $HTTP_PORTS ( msg: "this tcp is safe"; flow: to_server,established; sid:10000001; )
+#alert tcp $EXTERNAL_NET any -> 10.132.0.0/20 22 (msg: "ssh connection established"; flow: to_server,established; sid:10000004;)
+
+alert tcp 10.0.0.0/8 any -> 10.132.0.0/20 !$HTTP_PORTS (msg:"Nmap XMAS Tree Scan"; sid:1000006;)
+
+alert icmp any any -> 34.67.34.36 any (msg:"ICMP test detected"; sid:10000002;)
+alert icmp any any -> 10.132.0.0/20 any (msg:"ICMP test (internal) detected"; sid:10000003;) 
