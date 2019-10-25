@@ -1,7 +1,9 @@
 # Setup IDS on GCP
 This repository contains a few handy scripts to help with setting up a simple IDS implementation on GCP.
 
-`setup_ids_project.sh` builds the inline architecture, setting up the networks, subnets, routes, firewall-rules, and instances for a simple inline architecture. Its configuration is available via `setup_ids_project.sh -h`.
+`setup_ids_project.sh` builds the inline (aka perimeter) IDS architecture (see image below), setting up the networks, subnets, routes, firewall-rules, and instances for a simple inline architecture. Its configuration is available via `setup_ids_project.sh -h`.
+
+![Inline Architecture](images/inline_architecture.png)
 
 ## Installation
 
