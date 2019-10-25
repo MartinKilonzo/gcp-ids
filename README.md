@@ -31,7 +31,7 @@ This repository contains scripts to help you get setup with Suricata 3.2.1 and 4
 1. Once the installation is complete (about 15-20 minutes), you are ready to get started with Suricata! See the [Testing](#testing) section to test your IDS.
 
 ## Testing
-The test scripts are launched from the service-vm, an instance sitting in the external network, and simulates a few attacks to your backend-service which sits in the internal network.
+The test scripts are launched from the `external-service`, an instance sitting in the external network, and simulates a few attacks to your `internal-service` which sits in the internal network.
 
 `test_ids.sh` contains the tests for:
 

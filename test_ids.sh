@@ -1,3 +1,3 @@
 #!/bin/sh
 
-gcloud compute ssh service-vm -- < ./tests/setup_ids_tests.sh
+gcloud compute ssh external-service -- < ./tests/setup_ids_tests.sh

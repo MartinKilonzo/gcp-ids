@@ -110,7 +110,7 @@ gcloud compute firewall-rules create internal-allow-internal \
 # Create a service VM and an IDS VM in the external network
 echo 'Creating a service VM and an IDS VM in the external network'
 IDS_BRIDGE_INSTANCE=ids-bridge
-gcloud compute instances create service-vm \
+gcloud compute instances create external-service \
     --project $PROJECT_ID \
     --zone $ZONE \
     --network $EXTERNAL_NET \
@@ -125,7 +125,7 @@ gcloud compute instances create $IDS_BRIDGE_INSTANCE \
 
 # Create a VM in the protected, internal network
 echo 'Creating a VM in the protected, internal network'
-gcloud compute instances create backend-service \
+gcloud compute instances create internal-service \
     --project $PROJECT_ID \
     --zone $ZONE \
     --network $INTERNAL_NET \
